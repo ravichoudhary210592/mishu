@@ -17,8 +17,10 @@
 <body>
 <div id="room">
   <div class="window"><div class="sun"></div><div class="cloud c1"></div><div class="cloud c2"></div></div>
+  <div class="sea"></div>
   <div class="floor"></div>
   <div class="rug"></div>
+  <div id="decor"></div>
 </div>
 
 <div id="stage">
@@ -184,27 +186,52 @@
         </g>
         <circle id="mouthAnchor" cx="200" cy="262" r="1" fill="none"/>
         <!-- whiskers -->
+        <ellipse id="hotFace" cx="200" cy="215" rx="122" ry="108" fill="#FF3B30" opacity="0" pointer-events="none"/>
         <g class="cat-only" stroke="#B9835F" stroke-width="3.5" stroke-linecap="round" opacity=".8">
           <path d="M140 250 L64 238 M140 260 L62 266 M142 270 L72 292"/>
           <path d="M260 250 L336 238 M260 260 L338 266 M258 270 L328 292"/>
         </g>
+        <text id="hat" x="200" y="98" font-size="118" text-anchor="middle" pointer-events="none"></text>
       </g>
     </g>
   </svg>
 </div>
 
-<div id="ear" title="Mishu is listening"><span>👂</span></div>
-<button id="gear" aria-label="Grown-up settings (hold)">⚙️</button>
-<button id="swap" aria-label="Switch friend">👦🏽</button>
+<header id="top">
+  <button id="voiceBtn" aria-label="Voices"><span id="voiceIcon">🐭</span></button>
+  <div id="starPill"><span class="st">⭐</span><span id="starCount">0</span><div class="bar"><i id="starBar"></i></div></div>
+  <button id="swap" aria-label="Switch friend">👦🏽</button>
+  <button id="mapBtn" aria-label="Worlds">🗺️</button>
+  <button id="gear" aria-label="Grown-up settings (hold)">⚙️</button>
+</header>
 
 <nav id="toys">
-  <button data-act="milk" aria-label="Milk">🥛</button>
-  <button data-act="fish" data-cat="🐟" data-boy="🍪" aria-label="Snack">🐟</button>
-  <button data-act="yarn" data-cat="🧶" data-boy="⚽" aria-label="Ball">🧶</button>
-  <button data-act="song" aria-label="Song">🎵</button>
+  <button data-tray="food" aria-label="Food">🍽️</button>
+  <button data-tray="toys" aria-label="Toys">🧸</button>
+  <button id="gameBtn" aria-label="Game">🫧</button>
+  <button data-tray="hats" aria-label="Hats">🎩</button>
+  <button id="sleepBtn" aria-label="Lights off">💡</button>
 </nav>
+<div id="tray" hidden><div class="tray-inner"></div></div>
 
+<div id="night" hidden><span class="moon">🌙</span></div>
 <div id="fx"></div>
+<div id="game"></div>
+
+<div id="map" hidden>
+  <div class="map-card">
+    <div id="worlds"></div>
+    <button class="close" id="mapClose" aria-label="Close">✖️</button>
+  </div>
+</div>
+
+<div id="party" hidden>
+  <div class="party-card">
+    <div id="partyIcon"></div>
+    <div id="partyGifts"></div>
+    <button id="partyGo" aria-label="Go">▶️</button>
+  </div>
+</div>
 
 <div id="start">
   <div class="start-card">
@@ -221,9 +248,9 @@
 <div id="settings" hidden>
   <div class="panel">
     <h2>Grown-up settings</h2>
-    <label>Mishu's voice</label>
-    <div class="seg" data-key="pitch">
-      <button data-v="1.85">Very squeaky</button><button data-v="1.6">Squeaky</button><button data-v="1.35">Silly</button>
+    <label>Talk-back speed</label>
+    <div class="seg" data-key="pace">
+      <button data-v="1.4">Slow</button><button data-v="1.2">Gentle</button><button data-v="1">Same as child</button>
     </div>
     <label>Room</label>
     <div class="seg" data-key="sens">
@@ -234,6 +261,10 @@
       <button data-v="on">On</button><button data-v="off">Off</button>
     </div>
     <p class="tip">Tip: turn on <b>Guided Access</b> (Settings → Accessibility → Guided Access), then triple-click the side button inside Mishu. Your child can't leave the app until you triple-click again.</p>
+    <label>Worlds</label>
+    <div class="seg">
+      <button id="unlockAll">Unlock all</button><button id="resetAll">Start over</button>
+    </div>
     <p class="tip small">No ads, no accounts, no internet needed after the first open. Voices are never saved or sent anywhere.</p>
     <button id="closeSettings" class="done">Done</button>
   </div>
