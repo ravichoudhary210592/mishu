@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mishu">
+<meta name="theme-color" content="#bfe3f5">
+<title>Mishu</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="room">
+  <div class="window"><div class="sun"></div><div class="cloud c1"></div><div class="cloud c2"></div></div>
+  <div class="floor"></div>
+  <div class="rug"></div>
+</div>
+
+<div id="stage">
+  <svg id="kitty" viewBox="0 0 400 540" aria-label="Mishu the kitten">
+    <defs>
+      <radialGradient id="furG" cx="45%" cy="35%" r="70%">
+        <stop offset="0" stop-color="#FFDDB5"/><stop offset="1" stop-color="#F2B47E"/>
+      </radialGradient>
+      <radialGradient id="bellyG" cx="50%" cy="40%" r="60%">
+        <stop offset="0" stop-color="#FFFAF2"/><stop offset="1" stop-color="#FCE8D2"/>
+      </radialGradient>
+      <radialGradient id="skinG" cx="45%" cy="38%" r="70%">
+        <stop offset="0" stop-color="#B97A55"/><stop offset="1" stop-color="#9A5E3D"/>
+      </radialGradient>
+      <clipPath id="sweaterClip"><path d="M92 525 C 86 420, 110 345, 200 338 C 290 345, 314 420, 308 525 Z"/></clipPath>
+    </defs>
+
+    <g id="whole">
+      <!-- tail -->
+      <g id="tail" class="cat-only" data-zone="tail">
+        <path d="M285 470 C 360 470, 385 400, 360 345 C 348 318, 368 296, 388 312" fill="none" stroke="#EFAA70" stroke-width="30" stroke-linecap="round"/>
+        <path d="M285 470 C 360 470, 385 400, 360 345 C 348 318, 368 296, 388 312" fill="none" stroke="url(#furG)" stroke-width="22" stroke-linecap="round"/>
+        <path d="M372 330 l12 -6 M366 372 l14 -2 M352 420 l13 6" stroke="#E39A5E" stroke-width="7" stroke-linecap="round"/>
+        <rect x="270" y="280" width="140" height="210" fill="transparent"/>
+      </g>
+
+      <!-- body -->
+      <g id="body" data-zone="belly">
+        <g class="cat-only">
+          <ellipse cx="200" cy="420" rx="112" ry="100" fill="url(#furG)"/>
+          <ellipse id="belly" cx="200" cy="432" rx="70" ry="72" fill="url(#bellyG)"/>
+        </g>
+        <g class="boy-only">
+          <rect x="178" y="310" width="44" height="40" rx="10" fill="#9A5E3D"/>
+          <g clip-path="url(#sweaterClip)">
+            <rect x="80" y="330" width="240" height="200" fill="#EDE6D6"/>
+            <rect x="80" y="330" width="240" height="30" fill="#6E9A82"/>
+            <rect x="80" y="360" width="240" height="36" fill="#4C6FB5"/>
+            <rect x="80" y="396" width="240" height="22" fill="#1F2440"/>
+          </g>
+          <ellipse cx="200" cy="344" rx="40" ry="12" fill="none" stroke="#5C8670" stroke-width="7"/>
+        </g>
+      </g>
+
+      <!-- feet -->
+      <g data-zone="paw">
+        <g class="cat-only">
+          <ellipse cx="148" cy="512" rx="40" ry="22" fill="url(#furG)"/>
+          <ellipse cx="252" cy="512" rx="40" ry="22" fill="url(#furG)"/>
+          <path d="M138 505 v12 M154 505 v12 M242 505 v12 M258 505 v12" stroke="#E39A5E" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <g class="boy-only">
+          <ellipse cx="148" cy="500" rx="62" ry="30" fill="#2B2E2A"/>
+          <ellipse cx="252" cy="500" rx="62" ry="30" fill="#2B2E2A"/>
+          <path d="M226 488 l40 14" stroke="#C9483B" stroke-width="4" stroke-linecap="round"/>
+          <ellipse cx="96" cy="520" rx="26" ry="15" fill="#9A5E3D"/>
+          <ellipse cx="304" cy="520" rx="26" ry="15" fill="#9A5E3D"/>
+          <path d="M80 516 h32 M288 516 h32" stroke="#F08A24" stroke-width="9" stroke-linecap="round"/>
+        </g>
+      </g>
+
+      <!-- arms -->
+      <g id="pawL" data-zone="paw">
+        <g class="cat-only">
+          <ellipse cx="140" cy="445" rx="27" ry="44" fill="url(#furG)" stroke="#EFAA70" stroke-width="3"/>
+          <ellipse cx="140" cy="480" rx="20" ry="11" fill="#FFF1E0"/>
+        </g>
+        <g class="boy-only">
+          <rect x="112" y="370" width="48" height="112" rx="24" fill="#EDE6D6" stroke="#D8CFBC" stroke-width="3"/>
+          <rect x="112" y="398" width="48" height="16" fill="#1F2440"/>
+          <circle cx="136" cy="492" r="20" fill="url(#skinG)"/>
+        </g>
+      </g>
+      <g id="pawR" data-zone="paw">
+        <g class="cat-only">
+          <ellipse cx="260" cy="445" rx="27" ry="44" fill="url(#furG)" stroke="#EFAA70" stroke-width="3"/>
+          <ellipse cx="260" cy="480" rx="20" ry="11" fill="#FFF1E0"/>
+        </g>
+        <g class="boy-only">
+          <rect x="240" y="370" width="48" height="112" rx="24" fill="#EDE6D6" stroke="#D8CFBC" stroke-width="3"/>
+          <rect x="240" y="398" width="48" height="16" fill="#1F2440"/>
+          <circle cx="264" cy="492" r="21" fill="url(#skinG)"/>
+          <rect x="257" y="452" width="15" height="34" rx="7.5" fill="url(#skinG)" stroke="#8A5236" stroke-width="2"/>
+        </g>
+      </g>
+
+      <!-- head -->
+      <g id="head" data-zone="head">
+        <g class="boy-only">
+          <ellipse cx="72" cy="218" rx="24" ry="32" fill="#9A5E3D"/>
+          <ellipse cx="328" cy="218" rx="24" ry="32" fill="#9A5E3D"/>
+          <circle cx="68" cy="244" r="5" fill="#F2C14E"/>
+          <ellipse cx="200" cy="208" rx="130" ry="122" fill="url(#skinG)"/>
+          <path d="M72 205 C 60 110, 118 62, 200 60 C 284 60, 342 110, 328 205 L 318 168 C 312 150, 302 142, 292 138 L 280 152 L 268 136 L 254 152 L 240 134 L 226 152 L 212 134 L 198 152 L 184 134 L 170 152 L 156 136 L 142 152 L 128 138 C 106 142, 88 162, 82 205 Z" fill="#1E1715"/>
+          <path d="M120 82 C 160 66, 230 64, 280 84" fill="none" stroke="#3A302C" stroke-width="6" stroke-linecap="round" opacity=".6"/>
+          <ellipse cx="200" cy="160" rx="5" ry="9" fill="#E0475A" opacity=".85"/>
+          <circle cx="200" cy="178" r="5.5" fill="#151010"/>
+          <path d="M136 164 Q154 156 172 162 M228 162 Q246 156 264 164" stroke="#1E1715" stroke-width="5" stroke-linecap="round" fill="none"/>
+        </g>
+        <g id="earL" class="ear cat-only">
+          <path d="M88 160 L102 42 L182 108 Z" fill="url(#furG)" stroke="#F2B47E" stroke-width="16" stroke-linejoin="round"/>
+          <path d="M106 140 L114 72 L160 112 Z" fill="#FFB7C5" stroke="#FFB7C5" stroke-width="8" stroke-linejoin="round"/>
+        </g>
+        <g id="earR" class="ear cat-only">
+          <path d="M312 160 L298 42 L218 108 Z" fill="url(#furG)" stroke="#F2B47E" stroke-width="16" stroke-linejoin="round"/>
+          <path d="M294 140 L286 72 L240 112 Z" fill="#FFB7C5" stroke="#FFB7C5" stroke-width="8" stroke-linejoin="round"/>
+        </g>
+        <g class="cat-only">
+          <ellipse cx="200" cy="200" rx="134" ry="114" fill="url(#furG)"/>
+          <path d="M200 92 v26 M176 96 l6 22 M224 96 l-6 22" stroke="#E39A5E" stroke-width="8" stroke-linecap="round"/>
+          <ellipse cx="200" cy="252" rx="52" ry="36" fill="#FFF4E6"/>
+          <ellipse class="cheek" cx="114" cy="240" rx="24" ry="14" fill="#FF9DB0" opacity=".55"/>
+          <ellipse class="cheek" cx="286" cy="240" rx="24" ry="14" fill="#FF9DB0" opacity=".55"/>
+        </g>
+        <g class="boy-only">
+          <ellipse class="cheek" cx="108" cy="256" rx="26" ry="16" fill="#E2786C" opacity=".5"/>
+          <ellipse class="cheek" cx="292" cy="256" rx="26" ry="16" fill="#E2786C" opacity=".5"/>
+        </g>
+
+        <!-- eyes: open -->
+        <g id="eyesOpen">
+          <g class="eye" id="eyeL">
+            <ellipse cx="146" cy="195" rx="28" ry="34" fill="#3A2A22"/>
+            <g class="pupil"><circle cx="154" cy="182" r="10" fill="#fff"/><circle cx="138" cy="208" r="5" fill="#fff" opacity=".85"/></g>
+          </g>
+          <g class="eye" id="eyeR">
+            <ellipse cx="254" cy="195" rx="28" ry="34" fill="#3A2A22"/>
+            <g class="pupil"><circle cx="262" cy="182" r="10" fill="#fff"/><circle cx="246" cy="208" r="5" fill="#fff" opacity=".85"/></g>
+          </g>
+        </g>
+        <!-- eyes: happy ^ ^ -->
+        <g id="eyesHappy" class="alt-eyes" fill="none" stroke="#3A2A22" stroke-width="8" stroke-linecap="round">
+          <path d="M120 202 Q146 168 172 202"/><path d="M228 202 Q254 168 280 202"/>
+        </g>
+        <!-- eyes: squeeze > < -->
+        <g id="eyesOuch" class="alt-eyes" fill="none" stroke="#3A2A22" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M126 178 L166 196 L126 214"/><path d="M274 178 L234 196 L274 214"/>
+        </g>
+        <!-- eyes: sleepy -->
+        <g id="eyesSleep" class="alt-eyes" fill="none" stroke="#3A2A22" stroke-width="7" stroke-linecap="round">
+          <path d="M122 196 Q146 214 170 196"/><path d="M230 196 Q254 214 278 196"/>
+        </g>
+
+        <!-- cat nose + mouth -->
+        <g class="cat-only">
+          <path d="M188 230 Q200 222 212 230 Q207 242 200 245 Q193 242 188 230 Z" fill="#FF7E98"/>
+          <path id="mouthClosed" class="mclosed" d="M200 245 Q200 258 184 260 M200 245 Q200 258 216 260" fill="none" stroke="#7A4A3A" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <!-- boy glasses, nose, smile, dimples -->
+        <g class="boy-only">
+          <g fill="none" stroke="#2C3E6B" stroke-width="7">
+            <circle cx="154" cy="206" r="38"/><circle cx="246" cy="206" r="38"/>
+            <path d="M192 204 Q200 196 208 204 M116 200 L76 194 M284 200 L324 194" stroke-linecap="round"/>
+          </g>
+          <path d="M190 238 Q200 248 210 238" fill="none" stroke="#6E3F28" stroke-width="4.5" stroke-linecap="round"/>
+          <path class="mclosed" d="M164 262 Q200 302 236 262 Q200 276 164 262 Z" fill="#fff" stroke="#5A2A1C" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M156 266 q-5 7 0 13 M244 266 q5 7 0 13" fill="none" stroke="#7A4630" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+        <!-- mouth open -->
+        <g id="mouthOpen">
+          <ellipse cx="200" cy="262" rx="20" ry="18" fill="#8E3343"/>
+          <ellipse cx="200" cy="272" rx="12" ry="7" fill="#FF8FA6"/>
+        </g>
+        <circle id="mouthAnchor" cx="200" cy="262" r="1" fill="none"/>
+        <!-- whiskers -->
+        <g class="cat-only" stroke="#B9835F" stroke-width="3.5" stroke-linecap="round" opacity=".8">
+          <path d="M140 250 L64 238 M140 260 L62 266 M142 270 L72 292"/>
+          <path d="M260 250 L336 238 M260 260 L338 266 M258 270 L328 292"/>
+        </g>
+      </g>
+    </g>
+  </svg>
+</div>
+
+<div id="ear" title="Mishu is listening"><span>👂</span></div>
+<button id="gear" aria-label="Grown-up settings (hold)">⚙️</button>
+<button id="swap" aria-label="Switch friend">👦🏽</button>
+
+<nav id="toys">
+  <button data-act="milk" aria-label="Milk">🥛</button>
+  <button data-act="fish" data-cat="🐟" data-boy="🍪" aria-label="Snack">🐟</button>
+  <button data-act="yarn" data-cat="🧶" data-boy="⚽" aria-label="Ball">🧶</button>
+  <button data-act="song" aria-label="Song">🎵</button>
+</nav>
+
+<div id="fx"></div>
+
+<div id="start">
+  <div class="start-card">
+    <h1>Mishu</h1>
+    <p class="sub">Talk to me! I'll say it back</p>
+    <div class="picks">
+      <button class="go" data-who="cat" aria-label="Play with the kitten">🐱</button>
+      <button class="go" data-who="boy" aria-label="Play with me">👦🏽</button>
+    </div>
+    <p id="startMsg" class="msg"></p>
+  </div>
+</div>
+
+<div id="settings" hidden>
+  <div class="panel">
+    <h2>Grown-up settings</h2>
+    <label>Mishu's voice</label>
+    <div class="seg" data-key="pitch">
+      <button data-v="1.85">Very squeaky</button><button data-v="1.6">Squeaky</button><button data-v="1.35">Silly</button>
+    </div>
+    <label>Room</label>
+    <div class="seg" data-key="sens">
+      <button data-v="quiet">Quiet</button><button data-v="normal">Normal</button><button data-v="noisy">Noisy</button>
+    </div>
+    <label>Repeat what my child says</label>
+    <div class="seg" data-key="mic">
+      <button data-v="on">On</button><button data-v="off">Off</button>
+    </div>
+    <p class="tip">Tip: turn on <b>Guided Access</b> (Settings → Accessibility → Guided Access), then triple-click the side button inside Mishu. Your child can't leave the app until you triple-click again.</p>
+    <p class="tip small">No ads, no accounts, no internet needed after the first open. Voices are never saved or sent anywhere.</p>
+    <button id="closeSettings" class="done">Done</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
